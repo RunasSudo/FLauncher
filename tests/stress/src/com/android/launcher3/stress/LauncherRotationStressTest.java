@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.android.launcher3.stress;
+package io.github.runassudo.flauncher.stress;
 
 
-import com.android.launcher3.Launcher;
+import io.github.runassudo.flauncher.Launcher;
 
 import android.content.pm.ActivityInfo;
 import android.os.SystemClock;

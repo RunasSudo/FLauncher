@@ -13,15 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.launcher3;
+package io.github.runassudo.flauncher;
 
-import com.android.launcher3.backup.BackupProtos.CheckedMessage;
-import com.android.launcher3.backup.BackupProtos.Favorite;
-import com.android.launcher3.backup.BackupProtos.Key;
-import com.android.launcher3.backup.BackupProtos.Journal;
-import com.android.launcher3.backup.BackupProtos.Resource;
-import com.android.launcher3.backup.BackupProtos.Screen;
-import com.android.launcher3.backup.BackupProtos.Widget;
+import io.github.runassudo.flauncher.backup.BackupProtos.CheckedMessage;
+import io.github.runassudo.flauncher.backup.BackupProtos.Favorite;
+import io.github.runassudo.flauncher.backup.BackupProtos.Key;
+import io.github.runassudo.flauncher.backup.BackupProtos.Journal;
+import io.github.runassudo.flauncher.backup.BackupProtos.Resource;
+import io.github.runassudo.flauncher.backup.BackupProtos.Screen;
+import io.github.runassudo.flauncher.backup.BackupProtos.Widget;
 
 import com.google.protobuf.nano.InvalidProtocolBufferNanoException;
 import com.google.protobuf.nano.MessageNano;

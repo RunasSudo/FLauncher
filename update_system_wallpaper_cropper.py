@@ -40,8 +40,8 @@ com/android/photos/views/BlockingGLTextureView.java
 com/android/photos/views/TiledImageRenderer.java
 com/android/photos/views/TiledImageView.java
 com/android/gallery3d/common/BitmapUtils.java
-com/android/launcher3/CropView.java
-com/android/launcher3/WallpaperCropActivity.java
+io.github.runassudo.flauncher/CropView.java
+io.github.runassudo.flauncher/WallpaperCropActivity.java
 """
 
 if len(sys.argv) != 2:
