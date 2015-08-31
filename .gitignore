@@ -1,3 +1,5 @@
 db_files
 /.gradle
+/bintools
 /build
+/libs
