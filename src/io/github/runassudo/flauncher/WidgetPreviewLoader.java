@@ -28,12 +28,12 @@ import android.os.Handler;
 import android.util.Log;
 import android.util.LongSparseArray;
 
-import com.android.launcher3.compat.AppWidgetManagerCompat;
-import com.android.launcher3.compat.UserHandleCompat;
-import com.android.launcher3.compat.UserManagerCompat;
-import com.android.launcher3.util.ComponentKey;
-import com.android.launcher3.util.Thunk;
-import com.android.launcher3.widget.WidgetCell;
+import io.github.runassudo.flauncher.compat.AppWidgetManagerCompat;
+import io.github.runassudo.flauncher.compat.UserHandleCompat;
+import io.github.runassudo.flauncher.compat.UserManagerCompat;
+import io.github.runassudo.flauncher.util.ComponentKey;
+import io.github.runassudo.flauncher.util.Thunk;
+import io.github.runassudo.flauncher.widget.WidgetCell;
 
 import java.util.ArrayList;
 import java.util.Collections;

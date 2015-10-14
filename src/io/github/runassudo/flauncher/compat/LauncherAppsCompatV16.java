@@ -31,7 +31,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 
-import com.android.launcher3.util.Thunk;
+import io.github.runassudo.flauncher.util.Thunk;
 
 import java.util.ArrayList;
 import java.util.List;

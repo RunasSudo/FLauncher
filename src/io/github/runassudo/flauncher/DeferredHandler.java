@@ -21,7 +21,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.MessageQueue;
 
-import com.android.launcher3.util.Thunk;
+import io.github.runassudo.flauncher.util.Thunk;
 
 import java.util.LinkedList;
 

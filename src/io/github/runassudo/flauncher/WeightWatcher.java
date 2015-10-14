@@ -34,7 +34,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.android.launcher3.util.Thunk;
+import io.github.runassudo.flauncher.util.Thunk;
 
 public class WeightWatcher extends LinearLayout {
     private static final int RAM_GRAPH_RSS_COLOR = 0xFF990000;

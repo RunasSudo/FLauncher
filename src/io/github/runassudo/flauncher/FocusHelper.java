@@ -22,8 +22,8 @@ import android.view.SoundEffectConstants;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.android.launcher3.util.FocusLogic;
-import com.android.launcher3.util.Thunk;
+import io.github.runassudo.flauncher.util.FocusLogic;
+import io.github.runassudo.flauncher.util.Thunk;
 
 /**
  * A keyboard listener we set on all the workspace icons.

@@ -49,13 +49,13 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseArray;
 
-import com.android.launcher3.AutoInstallsLayout.LayoutParserCallback;
-import com.android.launcher3.LauncherSettings.Favorites;
-import com.android.launcher3.compat.UserHandleCompat;
-import com.android.launcher3.compat.UserManagerCompat;
-import com.android.launcher3.config.ProviderConfig;
-import com.android.launcher3.util.ManagedProfileHeuristic;
-import com.android.launcher3.util.Thunk;
+import io.github.runassudo.flauncher.AutoInstallsLayout.LayoutParserCallback;
+import io.github.runassudo.flauncher.LauncherSettings.Favorites;
+import io.github.runassudo.flauncher.compat.UserHandleCompat;
+import io.github.runassudo.flauncher.compat.UserManagerCompat;
+import io.github.runassudo.flauncher.config.ProviderConfig;
+import io.github.runassudo.flauncher.util.ManagedProfileHeuristic;
+import io.github.runassudo.flauncher.util.Thunk;
 
 import java.io.File;
 import java.net.URISyntaxException;

@@ -18,5 +18,5 @@ package io.github.runassudo.flauncher.config;
 
 public class ProviderConfig {
 
-    public static final String AUTHORITY = "com.android.launcher3.settings".intern();
+    public static final String AUTHORITY = "io.github.runassudo.flauncher.settings".intern();
 }

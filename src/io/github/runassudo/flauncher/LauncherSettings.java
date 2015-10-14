@@ -19,7 +19,7 @@ package io.github.runassudo.flauncher;
 import android.net.Uri;
 import android.provider.BaseColumns;
 
-import com.android.launcher3.config.ProviderConfig;
+import io.github.runassudo.flauncher.config.ProviderConfig;
 
 /**
  * Settings related utilities.

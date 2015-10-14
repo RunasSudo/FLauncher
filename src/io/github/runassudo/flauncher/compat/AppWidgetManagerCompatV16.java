@@ -28,9 +28,9 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 
-import com.android.launcher3.IconCache;
-import com.android.launcher3.LauncherAppWidgetProviderInfo;
-import com.android.launcher3.Utilities;
+import io.github.runassudo.flauncher.IconCache;
+import io.github.runassudo.flauncher.LauncherAppWidgetProviderInfo;
+import io.github.runassudo.flauncher.Utilities;
 
 import java.util.List;
 

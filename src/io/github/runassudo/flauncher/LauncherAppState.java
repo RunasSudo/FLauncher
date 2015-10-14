@@ -22,10 +22,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.util.Log;
-import com.android.launcher3.accessibility.LauncherAccessibilityDelegate;
-import com.android.launcher3.compat.LauncherAppsCompat;
-import com.android.launcher3.compat.PackageInstallerCompat;
-import com.android.launcher3.util.Thunk;
+import io.github.runassudo.flauncher.accessibility.LauncherAccessibilityDelegate;
+import io.github.runassudo.flauncher.compat.LauncherAppsCompat;
+import io.github.runassudo.flauncher.compat.PackageInstallerCompat;
+import io.github.runassudo.flauncher.util.Thunk;
 
 import java.lang.ref.WeakReference;
 

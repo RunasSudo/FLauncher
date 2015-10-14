@@ -155,7 +155,7 @@
         </activity>
 
         <activity
-            android:name="com.android.launcher3.SettingsActivity"
+            android:name="io.github.runassudo.flauncher.SettingsActivity"
             android:label="@string/settings_button_text"
             android:autoRemoveFromRecents="true"
             android:process=":settings_process">

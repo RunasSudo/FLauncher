@@ -23,10 +23,10 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.util.Log;
 
-import com.android.launcher3.LauncherSettings.Favorites;
-import com.android.launcher3.compat.LauncherActivityInfoCompat;
-import com.android.launcher3.compat.UserHandleCompat;
-import com.android.launcher3.compat.UserManagerCompat;
+import io.github.runassudo.flauncher.LauncherSettings.Favorites;
+import io.github.runassudo.flauncher.compat.LauncherActivityInfoCompat;
+import io.github.runassudo.flauncher.compat.UserHandleCompat;
+import io.github.runassudo.flauncher.compat.UserManagerCompat;
 
 import java.util.ArrayList;
 import java.util.Arrays;

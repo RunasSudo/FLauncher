@@ -37,9 +37,9 @@ import android.os.UserManager;
 import android.view.View;
 import android.widget.Toast;
 
-import com.android.launcher3.IconCache;
-import com.android.launcher3.LauncherAppWidgetProviderInfo;
-import com.android.launcher3.R;
+import io.github.runassudo.flauncher.IconCache;
+import io.github.runassudo.flauncher.LauncherAppWidgetProviderInfo;
+import io.github.runassudo.flauncher.R;
 
 import java.util.ArrayList;
 import java.util.List;

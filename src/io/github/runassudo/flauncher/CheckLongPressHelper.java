@@ -18,7 +18,7 @@ package io.github.runassudo.flauncher;
 
 import android.view.View;
 
-import com.android.launcher3.util.Thunk;
+import io.github.runassudo.flauncher.util.Thunk;
 
 public class CheckLongPressHelper {
 

@@ -48,8 +48,8 @@ import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.Interpolator;
 
-import com.android.launcher3.util.LauncherEdgeEffect;
-import com.android.launcher3.util.Thunk;
+import io.github.runassudo.flauncher.util.LauncherEdgeEffect;
+import io.github.runassudo.flauncher.util.Thunk;
 
 import java.util.ArrayList;
 

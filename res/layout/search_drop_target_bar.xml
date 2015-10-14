@@ -57,7 +57,7 @@
 
             <!-- Uninstall target -->
 
-            <com.android.launcher3.UninstallDropTarget
+            <io.github.runassudo.flauncher.UninstallDropTarget
                 android:id="@+id/uninstall_target_text"
                 style="@style/DropTargetButton"
                 android:text="@string/delete_target_uninstall_label" />

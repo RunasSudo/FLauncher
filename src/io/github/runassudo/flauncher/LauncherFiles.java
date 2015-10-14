@@ -19,7 +19,7 @@ public class LauncherFiles {
     public static final String LAUNCHER_DB = "launcher.db";
     public static final String SHARED_PREFERENCES_KEY = "io.github.runassudo.flauncher.prefs";
     public static final String WALLPAPER_CROP_PREFERENCES_KEY =
-            "com.android.launcher3.WallpaperCropActivity";
+            "io.github.runassudo.flauncher.WallpaperCropActivity";
     public static final String MANAGED_USER_PREFERENCES_KEY = "io.github.runassudo.flauncher.managedusers.prefs";
 
     public static final String WALLPAPER_IMAGES_DB = "saved_wallpaper_images.db";
@@ -42,5 +42,5 @@ public class LauncherFiles {
             "launches.log",
             "stats.log",
             "launcher.preferences",
-            "com.android.launcher3.compat.PackageInstallerCompatV16.queue"));
+            "io.github.runassudo.flauncher.compat.PackageInstallerCompatV16.queue"));
 }

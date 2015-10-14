@@ -14,13 +14,13 @@
  * the License.
  */
 
-package com.android.launcher3;
+package io.github.runassudo.flauncher;
 
 import android.test.AndroidTestCase;
 import android.test.suitebuilder.annotation.SmallTest;
 import android.view.KeyEvent;
 
-import com.android.launcher3.util.FocusLogic;
+import io.github.runassudo.flauncher.util.FocusLogic;
 
 /**
  * Tests the {@link FocusLogic} class that handles key event based focus handling.

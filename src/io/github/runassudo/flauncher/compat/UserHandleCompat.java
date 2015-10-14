@@ -20,7 +20,7 @@ import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
 import android.os.UserHandle;
-import com.android.launcher3.Utilities;
+import io.github.runassudo.flauncher.Utilities;
 
 public class UserHandleCompat {
     private UserHandle mUser;

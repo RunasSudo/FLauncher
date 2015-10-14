@@ -53,7 +53,7 @@
         android:paddingLeft="8dp"
         android:paddingRight="8dp" >
 
-        <com.android.launcher3.FolderEditText
+        <io.github.runassudo.flauncher.FolderEditText
             android:id="@+id/folder_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -82,4 +82,4 @@
 
     </LinearLayout>
 
-</com.android.launcher3.Folder>
+</io.github.runassudo.flauncher.Folder>

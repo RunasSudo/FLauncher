@@ -25,10 +25,10 @@ import android.os.Build;
 import android.os.Handler;
 import android.util.SparseArray;
 
-import com.android.launcher3.IconCache;
-import com.android.launcher3.LauncherAppState;
-import com.android.launcher3.LauncherModel;
-import com.android.launcher3.util.Thunk;
+import io.github.runassudo.flauncher.IconCache;
+import io.github.runassudo.flauncher.LauncherAppState;
+import io.github.runassudo.flauncher.LauncherModel;
+import io.github.runassudo.flauncher.util.Thunk;
 
 import java.util.HashMap;
 

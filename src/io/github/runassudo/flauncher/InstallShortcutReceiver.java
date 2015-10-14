@@ -29,11 +29,11 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
 
-import com.android.launcher3.compat.LauncherActivityInfoCompat;
-import com.android.launcher3.compat.LauncherAppsCompat;
-import com.android.launcher3.compat.UserHandleCompat;
-import com.android.launcher3.compat.UserManagerCompat;
-import com.android.launcher3.util.Thunk;
+import io.github.runassudo.flauncher.compat.LauncherActivityInfoCompat;
+import io.github.runassudo.flauncher.compat.LauncherAppsCompat;
+import io.github.runassudo.flauncher.compat.UserHandleCompat;
+import io.github.runassudo.flauncher.compat.UserManagerCompat;
+import io.github.runassudo.flauncher.util.Thunk;
 
 import org.json.JSONException;
 import org.json.JSONObject;

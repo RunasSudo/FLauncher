@@ -39,8 +39,8 @@ import android.view.ViewParent;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.TextView;
-import com.android.launcher3.IconCache.IconLoadRequest;
-import com.android.launcher3.model.PackageItemInfo;
+import io.github.runassudo.flauncher.IconCache.IconLoadRequest;
+import io.github.runassudo.flauncher.model.PackageItemInfo;
 
 /**
  * TextView that draws a bubble behind the text. We cannot use a LineBackgroundSpan

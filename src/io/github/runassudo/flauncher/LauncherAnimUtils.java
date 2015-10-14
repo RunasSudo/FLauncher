@@ -27,7 +27,7 @@ import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.ViewTreeObserver;
 
-import com.android.launcher3.util.UiThreadCircularReveal;
+import io.github.runassudo.flauncher.util.UiThreadCircularReveal;
 
 import java.util.HashSet;
 import java.util.WeakHashMap;

@@ -24,7 +24,7 @@ import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.UserHandle;
-import com.android.launcher3.LauncherAppState;
+import io.github.runassudo.flauncher.LauncherAppState;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

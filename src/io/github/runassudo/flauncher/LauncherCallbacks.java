@@ -7,8 +7,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
-import com.android.launcher3.allapps.AllAppsSearchBarController;
-import com.android.launcher3.util.ComponentKey;
+import io.github.runassudo.flauncher.allapps.AllAppsSearchBarController;
+import io.github.runassudo.flauncher.util.ComponentKey;
 
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
