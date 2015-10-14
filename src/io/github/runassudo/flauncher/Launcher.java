@@ -415,6 +415,9 @@ public class Launcher extends Activity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // (FLauncher) Load settings
+        SettingsData.loadSettings(getApplicationContext());
+
         if (DEBUG_STRICT_MODE) {
             StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
                     .detectDiskReads()
@@ -3482,10 +3485,7 @@ public class Launcher extends Activity
 
     public View getOrCreateQsbBar() {
         // (FLauncher) QSB
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        boolean searchBarVisible = sharedPref.getBoolean("desktop_show_searchbar", true);
-        System.out.println("GETORCREATEQSBBAR: " + searchBarVisible);
-        if (!searchBarVisible) {
+        if (!SettingsData.desktopShowSearchbar) {
             return null;
         }
 

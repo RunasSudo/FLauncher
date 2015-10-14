@@ -18,10 +18,8 @@ package io.github.runassudo.flauncher;
 
 import android.annotation.TargetApi;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.os.Build;
-import android.preference.PreferenceManager;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.WindowManager;
@@ -149,10 +147,9 @@ public class InvariantDeviceProfile {
         minAllAppsPredictionColumns = closestProfile.minAllAppsPredictionColumns;
 
         // (FLauncher) Custom grid size
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-        if (sharedPref.getString("desktop_grid_mode", "default").equals("custom")) {
-            numRows = Integer.parseInt(sharedPref.getString("desktop_grid_custom_height", "5"));
-            numColumns = Integer.parseInt(sharedPref.getString("desktop_grid_custom_width", "5"));
+        if (SettingsData.desktopGridMode.equals("custom")) {
+            numRows = SettingsData.desktopGridCustomHeight;
+            numColumns = SettingsData.desktopGridCustomWidth;
         }
 
         iconSize = interpolatedDeviceProfileOut.iconSize;

@@ -4,4 +4,6 @@ db_files
 /build
 /libs
 /local.properties
+
 /.idea/workspace.xml
+/.idea/inspectionProfiles
