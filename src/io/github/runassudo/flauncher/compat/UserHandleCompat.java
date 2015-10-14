@@ -16,11 +16,11 @@
 
 package io.github.runassudo.flauncher.compat;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
 import android.os.UserHandle;
-
-import io.github.runassudo.flauncher.Utilities;
+import com.android.launcher3.Utilities;
 
 public class UserHandleCompat {
     private UserHandle mUser;
@@ -32,6 +32,7 @@ public class UserHandleCompat {
     private UserHandleCompat() {
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     public static UserHandleCompat myUserHandle() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             return new UserHandleCompat(android.os.Process.myUserHandle());
@@ -40,7 +41,7 @@ public class UserHandleCompat {
         }
     }
 
-    static UserHandleCompat fromUser(UserHandle user) {
+    public static UserHandleCompat fromUser(UserHandle user) {
         if (user == null) {
             return null;
         } else {
