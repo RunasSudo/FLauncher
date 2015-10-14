@@ -546,6 +546,15 @@ public interface BackupProtos {
   public static final class Favorite extends
       com.google.protobuf.nano.MessageNano {
 
+    // enum TargetType
+    public static final int TARGET_NONE = 0;
+    public static final int TARGET_PHONE = 1;
+    public static final int TARGET_MESSENGER = 2;
+    public static final int TARGET_EMAIL = 3;
+    public static final int TARGET_BROWSER = 4;
+    public static final int TARGET_GALLERY = 5;
+    public static final int TARGET_CAMERA = 6;
+
     private static volatile Favorite[] _emptyArray;
     public static Favorite[] emptyArray() {
       // Lazily initializes the empty array
@@ -614,6 +623,9 @@ public interface BackupProtos {
     // optional bytes icon = 18;
     public byte[] icon;
 
+    // optional .launcher_backup.Favorite.TargetType targetType = 19 [default = TARGET_NONE];
+    public int targetType;
+
     public Favorite() {
       clear();
     }
@@ -637,6 +649,7 @@ public interface BackupProtos {
       iconPackage = "";
       iconResource = "";
       icon = com.google.protobuf.nano.WireFormatNano.EMPTY_BYTES;
+      targetType = io.github.runassudo.flauncher.backup.BackupProtos.Favorite.TARGET_NONE;
       cachedSize = -1;
       return this;
     }
@@ -693,6 +706,9 @@ public interface BackupProtos {
       }
       if (!java.util.Arrays.equals(this.icon, com.google.protobuf.nano.WireFormatNano.EMPTY_BYTES)) {
         output.writeBytes(18, this.icon);
+      }
+      if (this.targetType != io.github.runassudo.flauncher.backup.BackupProtos.Favorite.TARGET_NONE) {
+        output.writeInt32(19, this.targetType);
       }
       super.writeTo(output);
     }
@@ -767,6 +783,10 @@ public interface BackupProtos {
       if (!java.util.Arrays.equals(this.icon, com.google.protobuf.nano.WireFormatNano.EMPTY_BYTES)) {
         size += com.google.protobuf.nano.CodedOutputByteBufferNano
             .computeBytesSize(18, this.icon);
+      }
+      if (this.targetType != io.github.runassudo.flauncher.backup.BackupProtos.Favorite.TARGET_NONE) {
+        size += com.google.protobuf.nano.CodedOutputByteBufferNano
+          .computeInt32Size(19, this.targetType);
       }
       return size;
     }
@@ -856,6 +876,21 @@ public interface BackupProtos {
           }
           case 146: {
             this.icon = input.readBytes();
+            break;
+          }
+          case 152: {
+            int value = input.readInt32();
+            switch (value) {
+              case io.github.runassudo.flauncher.backup.BackupProtos.Favorite.TARGET_NONE:
+              case io.github.runassudo.flauncher.backup.BackupProtos.Favorite.TARGET_PHONE:
+              case io.github.runassudo.flauncher.backup.BackupProtos.Favorite.TARGET_MESSENGER:
+              case io.github.runassudo.flauncher.backup.BackupProtos.Favorite.TARGET_EMAIL:
+              case io.github.runassudo.flauncher.backup.BackupProtos.Favorite.TARGET_BROWSER:
+              case io.github.runassudo.flauncher.backup.BackupProtos.Favorite.TARGET_GALLERY:
+              case io.github.runassudo.flauncher.backup.BackupProtos.Favorite.TARGET_CAMERA:
+                this.targetType = value;
+                break;
+            }
             break;
           }
         }
@@ -1092,6 +1127,12 @@ public interface BackupProtos {
     // optional .launcher_backup.Resource preview = 5;
     public io.github.runassudo.flauncher.backup.BackupProtos.Resource preview;
 
+    // optional int32 minSpanX = 6 [default = 2];
+    public int minSpanX;
+
+    // optional int32 minSpanY = 7 [default = 2];
+    public int minSpanY;
+
     public Widget() {
       clear();
     }
@@ -1102,6 +1143,8 @@ public interface BackupProtos {
       configure = false;
       icon = null;
       preview = null;
+      minSpanX = 2;
+      minSpanY = 2;
       cachedSize = -1;
       return this;
     }
@@ -1121,6 +1164,12 @@ public interface BackupProtos {
       }
       if (this.preview != null) {
         output.writeMessage(5, this.preview);
+      }
+      if (this.minSpanX != 2) {
+        output.writeInt32(6, this.minSpanX);
+      }
+      if (this.minSpanY != 2) {
+        output.writeInt32(7, this.minSpanY);
       }
       super.writeTo(output);
     }
@@ -1145,6 +1194,14 @@ public interface BackupProtos {
       if (this.preview != null) {
         size += com.google.protobuf.nano.CodedOutputByteBufferNano
           .computeMessageSize(5, this.preview);
+      }
+      if (this.minSpanX != 2) {
+        size += com.google.protobuf.nano.CodedOutputByteBufferNano
+            .computeInt32Size(6, this.minSpanX);
+      }
+      if (this.minSpanY != 2) {
+        size += com.google.protobuf.nano.CodedOutputByteBufferNano
+            .computeInt32Size(7, this.minSpanY);
       }
       return size;
     }
@@ -1188,6 +1245,14 @@ public interface BackupProtos {
               this.preview = new io.github.runassudo.flauncher.backup.BackupProtos.Resource();
             }
             input.readMessage(this.preview);
+            break;
+          }
+          case 48: {
+            this.minSpanX = input.readInt32();
+            break;
+          }
+          case 56: {
+            this.minSpanY = input.readInt32();
             break;
           }
         }

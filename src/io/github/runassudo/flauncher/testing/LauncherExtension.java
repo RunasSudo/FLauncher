@@ -11,14 +11,14 @@ import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 
-import io.github.runassudo.flauncher.testing.AppInfo;
-import io.github.runassudo.flauncher.testing.InsettableFrameLayout;
-import io.github.runassudo.flauncher.testing.Launcher;
-import io.github.runassudo.flauncher.testing.LauncherAnimUtils;
-import io.github.runassudo.flauncher.testing.LauncherCallbacks;
-import io.github.runassudo.flauncher.testing.R;
-import io.github.runassudo.flauncher.testing.allapps.AllAppsSearchBarController;
-import io.github.runassudo.flauncher.testing.util.ComponentKey;
+import io.github.runassudo.flauncher.AppInfo;
+import io.github.runassudo.flauncher.InsettableFrameLayout;
+import io.github.runassudo.flauncher.Launcher;
+import io.github.runassudo.flauncher.LauncherAnimUtils;
+import io.github.runassudo.flauncher.LauncherCallbacks;
+import io.github.runassudo.flauncher.R;
+import io.github.runassudo.flauncher.allapps.AllAppsSearchBarController;
+import io.github.runassudo.flauncher.util.ComponentKey;
 
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
