@@ -65,6 +65,7 @@ import android.os.Message;
 import android.os.StrictMode;
 import android.os.SystemClock;
 import android.os.UserHandle;
+import android.preference.PreferenceManager;
 import android.text.Selection;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
@@ -3480,6 +3481,14 @@ public class Launcher extends Activity
     }
 
     public View getOrCreateQsbBar() {
+        // (FLauncher) QSB
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        boolean searchBarVisible = sharedPref.getBoolean("desktop_show_searchbar", true);
+        System.out.println("GETORCREATEQSBBAR: " + searchBarVisible);
+        if (!searchBarVisible) {
+            return null;
+        }
+
         if (mLauncherCallbacks != null && mLauncherCallbacks.providesSearch()) {
             return mLauncherCallbacks.getQsbBar();
         }
