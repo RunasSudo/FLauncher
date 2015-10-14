@@ -23,4 +23,45 @@
             android:persistent="true"
     />
 
+    <Preference
+        android:title="@string/restart_application"
+        android:summary="@string/restart_application_summary">
+        <intent
+            android:targetClass="io.github.runassudo.flauncher.RestartActivity"
+            android:targetPackage="io.github.runassudo.flauncher" />
+    </Preference>
+
+    <PreferenceCategory android:title="@string/desktop_settings">
+        <ListPreference
+            android:key="desktop_grid_mode"
+            android:title="@string/desktop_grid_mode"
+            android:summary="@string/desktop_grid_mode_summary"
+            android:entries="@array/desktop_grid_mode_entries"
+            android:entryValues="@array/desktop_grid_mode_values"
+            android:defaultValue="default" />
+        <EditTextPreference
+            android:key="desktop_grid_custom_width"
+            android:title="@string/desktop_grid_custom_width"
+            android:summary="@string/desktop_grid_custom_width_summary"
+            android:inputType="number"
+            android:defaultValue="5" />
+        <EditTextPreference
+            android:key="desktop_grid_custom_height"
+            android:title="@string/desktop_grid_custom_height"
+            android:summary="@string/desktop_grid_custom_height_summary"
+            android:inputType="number"
+            android:defaultValue="5" />
+        <EditTextPreference
+            android:key="desktop_default_screen"
+            android:title="@string/desktop_default_screen"
+            android:summary="@string/desktop_default_screen_summary"
+            android:inputType="number"
+            android:defaultValue="0" />
+        <CheckBoxPreference
+            android:key="desktop_show_searchbar"
+            android:title="@string/desktop_show_searchbar"
+            android:summary="@string/desktop_show_searchbar_summary"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+
 </PreferenceScreen>

@@ -163,6 +163,8 @@
             android:process=":settings_process">
         </activity>
 
+        <activity android:name="io.github.runassudo.flauncher.RestartActivity" />
+
         <!-- Debugging tools -->
         <activity
             android:name="io.github.runassudo.flauncher.MemoryDumpActivity"

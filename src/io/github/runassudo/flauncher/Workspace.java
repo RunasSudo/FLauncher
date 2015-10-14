@@ -46,6 +46,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Parcelable;
+import android.preference.PreferenceManager;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.SparseArray;
@@ -308,7 +309,12 @@ public class Workspace extends PagedView
         mSpringLoadedShrinkFactor =
             res.getInteger(R.integer.config_workspaceSpringLoadShrinkPercentage) / 100.0f;
         mOverviewModeShrinkFactor = grid.getOverviewModeScale(mIsRtl);
-        mOriginalDefaultPage = mDefaultPage = a.getInt(R.styleable.Workspace_defaultScreen, 1);
+
+        // (FLauncher) Custom default page
+        // mOriginalDefaultPage = mDefaultPage = a.getInt(R.styleable.Workspace_defaultScreen, 1);
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
+        mOriginalDefaultPage = mDefaultPage = Integer.parseInt(sharedPref.getString("desktop_default_screen", "0"));
+
         a.recycle();
 
         setOnHierarchyChangeListener(this);
