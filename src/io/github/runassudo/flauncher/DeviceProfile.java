@@ -19,11 +19,13 @@ package io.github.runassudo.flauncher;
 import android.appwidget.AppWidgetHostView;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Paint;
 import android.graphics.Paint.FontMetrics;
 import android.graphics.Point;
 import android.graphics.Rect;
+import android.preference.PreferenceManager;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.View;
@@ -98,6 +100,9 @@ public class DeviceProfile {
     private int searchBarSpaceWidthPx;
     private int searchBarSpaceHeightPx;
 
+    // (FLauncher) QSB visibility
+    private boolean searchBarVisible;
+
     public DeviceProfile(Context context, InvariantDeviceProfile inv,
             Point minSize, Point maxSize,
             int width, int height, boolean isLandscape) {
@@ -161,6 +166,10 @@ public class DeviceProfile {
         // Calculate the remaining vars
         updateAvailableDimensions(dm, res);
         computeAllAppsButtonSize(context);
+
+        // (FLauncher) QSB visibility
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
+        searchBarVisible = sharedPref.getBoolean("desktop_show_searchbar", true);
     }
 
     /**
@@ -317,6 +326,14 @@ public class DeviceProfile {
                         searchBarBounds.bottom,
                         desiredWorkspaceLeftRightMarginPx - defaultWidgetPadding.right,
                         hotseatBarHeightPx + pageIndicatorHeightPx);
+
+                // (FLauncher) Hide QSB space if QSB hidden
+                if (!searchBarVisible) {
+                    padding.set(desiredWorkspaceLeftRightMarginPx - defaultWidgetPadding.left,
+                            0,
+                            desiredWorkspaceLeftRightMarginPx - defaultWidgetPadding.right,
+                            hotseatBarHeightPx + pageIndicatorHeightPx);
+                }
             }
         }
         return padding;
