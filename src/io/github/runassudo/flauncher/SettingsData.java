@@ -34,6 +34,7 @@ public class SettingsData {
         desktopGridMode = sharedPref.getString("desktop_grid_mode", "default");
         desktopGridCustomWidth = Integer.parseInt(sharedPref.getString("desktop_grid_custom_width", "5"));
         desktopGridCustomHeight = Integer.parseInt(sharedPref.getString("desktop_grid_custom_height", "5"));
+        desktopDefaultScreen = Integer.parseInt(sharedPref.getString("desktop_default_screen", "0"));
         desktopShowSearchbar = sharedPref.getBoolean("desktop_show_searchbar", true);
     }
 }
