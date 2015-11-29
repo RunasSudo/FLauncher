@@ -95,6 +95,15 @@ public class IconPackHelper {
         return iconName;
     }
 
+    public String getIconName(ComponentName component) {
+        // Try the specific activity first, then the general package.
+        String iconName = getIconName(component.flattenToString());
+        if (iconName == null) {
+            iconName = getIconName(component.getPackageName());
+        }
+        return iconName;
+    }
+
     public int getIdFromName(String iconName) {
         return packResources.getIdentifier(iconName, "drawable", mIconPack);
     }

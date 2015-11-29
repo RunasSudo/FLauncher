@@ -110,6 +110,9 @@ public class IconCache {
     private Canvas mLowResCanvas;
     private Paint mLowResPaint;
 
+    // (FLauncher) Icon pack support
+    private IconPackHelper iconPackHelper;
+
     public IconCache(Context context, InvariantDeviceProfile inv) {
         mContext = context;
         mPackageManager = context.getPackageManager();
@@ -127,6 +130,11 @@ public class IconCache {
         // automatically be loaded as ALPHA_8888.
         mLowResOptions.inPreferredConfig = Bitmap.Config.RGB_565;
         updateSystemStateString();
+
+        // (FLauncher) Icon pack support
+        if (!SettingsData.iconPackName.equals("")) {
+            iconPackHelper = new IconPackHelper(context, SettingsData.iconPackName);
+        }
     }
 
     private Drawable getFullResDefaultActivityIcon() {
@@ -239,7 +247,7 @@ public class IconCache {
         long userSerial = mUserManager.getSerialNumberForUser(user);
         mIconDb.getWritableDatabase().delete(IconDB.TABLE_NAME,
                 IconDB.COLUMN_COMPONENT + " LIKE ? AND " + IconDB.COLUMN_USER + " = ?",
-                new String[] {packageName + "/%", Long.toString(userSerial)});
+                new String[]{packageName + "/%", Long.toString(userSerial)});
     }
 
     public void updateDbIcons(Set<String> ignorePackagesForMainUser) {
@@ -539,26 +547,39 @@ public class IconCache {
             entry = new CacheEntry();
             mCache.put(cacheKey, entry);
 
-            // Check the DB first.
-            if (!getEntryFromDB(componentName, user, entry, useLowResIcon)) {
-                if (info != null) {
-                    entry.icon = Utilities.createIconBitmap(info.getBadgedIcon(mIconDpi), mContext);
-                } else {
-                    if (usePackageIcon) {
-                        CacheEntry packageEntry = getEntryForPackageLocked(
-                                componentName.getPackageName(), user, false);
-                        if (packageEntry != null) {
-                            if (DEBUG) Log.d(TAG, "using package default icon for " +
-                                    componentName.toShortString());
-                            entry.icon = packageEntry.icon;
-                            entry.title = packageEntry.title;
-                            entry.contentDescription = packageEntry.contentDescription;
-                        }
+            // (FLauncher) Icon pack support
+            if (iconPackHelper != null) {
+                String iconName = iconPackHelper.getIconName(componentName);
+                if (iconName != null) { // The icon pack does not claim to have this icon.
+                    int iconId = iconPackHelper.getIdFromName(iconName);
+                    if (iconId > 0) { // The icon pack couldn't put its money where its mouth was.
+                        entry.icon = Utilities.createIconBitmap(getFullResIcon(SettingsData.iconPackName, iconId), mContext);
                     }
-                    if (entry.icon == null) {
-                        if (DEBUG) Log.d(TAG, "using default icon for " +
-                                componentName.toShortString());
-                        entry.icon = getDefaultIcon(user);
+                }
+            }
+
+            if (entry.icon == null) {
+                // Check the DB first.
+                if (!getEntryFromDB(componentName, user, entry, useLowResIcon)) {
+                    if (info != null) {
+                        entry.icon = Utilities.createIconBitmap(info.getBadgedIcon(mIconDpi), mContext);
+                    } else {
+                        if (usePackageIcon) {
+                            CacheEntry packageEntry = getEntryForPackageLocked(
+                                    componentName.getPackageName(), user, false);
+                            if (packageEntry != null) {
+                                if (DEBUG) Log.d(TAG, "using package default icon for " +
+                                        componentName.toShortString());
+                                entry.icon = packageEntry.icon;
+                                entry.title = packageEntry.title;
+                                entry.contentDescription = packageEntry.contentDescription;
+                            }
+                        }
+                        if (entry.icon == null) {
+                            if (DEBUG) Log.d(TAG, "using default icon for " +
+                                    componentName.toShortString());
+                            entry.icon = getDefaultIcon(user);
+                        }
                     }
                 }
             }
