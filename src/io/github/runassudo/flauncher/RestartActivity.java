@@ -1,5 +1,5 @@
 //    FLauncher
-//    Copyright © 2015  RunasSudo
+//    Copyright © 2015  RunasSudo (Yingtong Li)
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
