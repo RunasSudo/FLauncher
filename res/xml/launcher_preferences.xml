@@ -64,4 +64,13 @@
             android:defaultValue="true" />
     </PreferenceCategory>
 
+    <PreferenceCategory android:title="@string/icon_settings">
+        <EditTextPreference
+            android:key="icon_pack_name"
+            android:title="@string/icon_pack_name"
+            android:summary="@string/icon_pack_name_summary"
+            android:inputType="text"
+            android:defaultValue="" />
+    </PreferenceCategory>
+
 </PreferenceScreen>

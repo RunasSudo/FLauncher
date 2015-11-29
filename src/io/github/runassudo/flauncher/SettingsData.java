@@ -28,6 +28,8 @@ public class SettingsData {
     public static int desktopDefaultScreen;
     public static boolean desktopShowSearchbar;
 
+    public static String iconPackName;
+
     public static void loadSettings(Context context) {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
 
@@ -36,5 +38,7 @@ public class SettingsData {
         desktopGridCustomHeight = Integer.parseInt(sharedPref.getString("desktop_grid_custom_height", "5"));
         desktopDefaultScreen = Integer.parseInt(sharedPref.getString("desktop_default_screen", "0"));
         desktopShowSearchbar = sharedPref.getBoolean("desktop_show_searchbar", true);
+
+        iconPackName = sharedPref.getString("icon_pack_name", "");
     }
 }
