@@ -39,7 +39,7 @@
     <permission
         android:name="io.github.runassudo.flauncher.permission.WRITE_SETTINGS"
         android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
-        android:protectionLevel="signatureOrSystem"
+        android:protectionLevel="signature"
         android:label="@string/permlab_write_settings"
         android:description="@string/permdesc_write_settings"/>
     <permission
@@ -48,13 +48,12 @@
         />
     <permission
         android:name="io.github.runassudo.flauncher.permission.RECEIVE_FIRST_LOAD_BROADCAST"
-        android:protectionLevel="signatureOrSystem" />
+        android:protectionLevel="signature" />
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
     <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.BIND_APPWIDGET" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.BROADCAST_STICKY"/>

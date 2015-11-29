@@ -18,7 +18,6 @@ package io.github.runassudo.flauncher;
 
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.util.Log;
@@ -37,7 +36,7 @@ public class IconPackHelper {
     private final String mIconPack;
 
     private Resources packResources;
-    private HashMap<String, String> componentDrawables = new HashMap<String, String>();
+    private HashMap<String, String> componentDrawables = new HashMap<>();
 
     public IconPackHelper(Context context, String iconPack) {
         mContext = context;
@@ -84,15 +83,6 @@ public class IconPackHelper {
 
     public String getIconName(String component) {
         return componentDrawables.get(component);
-    }
-
-    public String getIconName(ActivityInfo info) {
-        // Try the specific activity first, then the general package.
-        String iconName = getIconName(info.name.toLowerCase());
-        if (iconName == null) {
-            iconName = getIconName(info.packageName.toLowerCase());
-        }
-        return iconName;
     }
 
     public String getIconName(ComponentName component) {
