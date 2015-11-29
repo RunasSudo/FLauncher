@@ -48,4 +48,10 @@
     <!-- Desktop Show Searchbar -->
     <string name="desktop_show_searchbar">Show Searchbar</string>
     <string name="desktop_show_searchbar_summary">Shows or hides the Google search bar at the top of each page.</string>
+
+    <string name="icon_settings">Icon Settings</string>
+
+    <!-- Icon Pack Name -->
+    <string name="icon_pack_name">Icon Pack Name</string>
+    <string name="icon_pack_name_summary">Blank to disable, or an app ID ("com.example.myapp").</string>
 </resources>
