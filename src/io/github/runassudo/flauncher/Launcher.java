@@ -1226,13 +1226,7 @@ public class Launcher extends Activity
     }
 
     protected boolean hasSettings() {
-        if (mLauncherCallbacks != null) {
-            return mLauncherCallbacks.hasSettings();
-        } else {
-            // On devices with a locked orientation, we will at least have the allow rotation
-            // setting.
-            return !Utilities.isRotationAllowedForDevice(this);
-        }
+        return true; // (FLauncher) Always has settings
     }
 
     public void addToCustomContentPage(View customContent,
