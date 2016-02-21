@@ -4,7 +4,6 @@ db_files
 /.idea/inspectionProfiles
 *.apk
 
-*.iml
 .project
 .classpath
 .project.properties
