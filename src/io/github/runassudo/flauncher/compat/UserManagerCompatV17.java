@@ -21,7 +21,7 @@ import android.content.Context;
 import android.os.Build;
 import android.os.UserManager;
 
-import com.android.launcher3.util.LongArrayMap;
+import io.github.runassudo.flauncher.util.LongArrayMap;
 
 import java.util.HashMap;
 

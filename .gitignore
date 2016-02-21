@@ -1,7 +1,8 @@
 db_files
 
-/bintools
-/libs
+/.idea/workspace.xml
+/.idea/inspectionProfiles
+*.apk
 
 *.iml
 .project
@@ -12,7 +13,6 @@ tests/stress/gen/
 WallpaperPicker/gen/
 WallpaperPicker/.project.properties
 bin/
-.idea/
 .gradle/
 local.properties
 gradle/

@@ -55,7 +55,7 @@ import io.github.runassudo.flauncher.compat.PackageInstallerCompat;
 import io.github.runassudo.flauncher.compat.PackageInstallerCompat.PackageInstallInfo;
 import io.github.runassudo.flauncher.compat.UserHandleCompat;
 import io.github.runassudo.flauncher.compat.UserManagerCompat;
-import com.android.launcher3.model.MigrateFromRestoreTask;
+import io.github.runassudo.flauncher.model.MigrateFromRestoreTask;
 import io.github.runassudo.flauncher.model.WidgetsModel;
 import io.github.runassudo.flauncher.util.ComponentKey;
 import io.github.runassudo.flauncher.util.CursorIconInfo;

@@ -1,35 +1,35 @@
--keep class com.android.launcher3.allapps.AllAppsBackgroundDrawable {
+-keep class io.github.runassudo.flauncher.allapps.AllAppsBackgroundDrawable {
   public void setAlpha(int);
   public int getAlpha();
 }
 
--keep class com.android.launcher3.BaseRecyclerViewFastScrollBar {
+-keep class io.github.runassudo.flauncher.BaseRecyclerViewFastScrollBar {
   public void setThumbWidth(int);
   public int getThumbWidth();
   public void setTrackWidth(int);
   public int getTrackWidth();
 }
 
--keep class com.android.launcher3.BaseRecyclerViewFastScrollPopup {
+-keep class io.github.runassudo.flauncher.BaseRecyclerViewFastScrollPopup {
   public void setAlpha(float);
   public float getAlpha();
 }
 
--keep class com.android.launcher3.BubbleTextView {
+-keep class io.github.runassudo.flauncher.BubbleTextView {
   public void setFastScrollFocus(float);
   public float getFastScrollFocus();
 }
 
--keep class com.android.launcher3.ButtonDropTarget {
+-keep class io.github.runassudo.flauncher.ButtonDropTarget {
   public int getTextColor();
 }
 
--keep class com.android.launcher3.CellLayout {
+-keep class io.github.runassudo.flauncher.CellLayout {
   public float getBackgroundAlpha();
   public void setBackgroundAlpha(float);
 }
 
--keep class com.android.launcher3.CellLayout$LayoutParams {
+-keep class io.github.runassudo.flauncher.CellLayout$LayoutParams {
   public void setWidth(int);
   public int getWidth();
   public void setHeight(int);
@@ -40,7 +40,7 @@
   public int getY();
 }
 
--keep class com.android.launcher3.DragLayer$LayoutParams {
+-keep class io.github.runassudo.flauncher.DragLayer$LayoutParams {
   public void setWidth(int);
   public int getWidth();
   public void setHeight(int);
@@ -51,21 +51,21 @@
   public int getY();
 }
 
--keep class com.android.launcher3.FastBitmapDrawable {
+-keep class io.github.runassudo.flauncher.FastBitmapDrawable {
   public int getBrightness();
   public void setBrightness(int);
 }
 
--keep class com.android.launcher3.MemoryDumpActivity {
+-keep class io.github.runassudo.flauncher.MemoryDumpActivity {
   *;
 }
 
--keep class com.android.launcher3.PreloadIconDrawable {
+-keep class io.github.runassudo.flauncher.PreloadIconDrawable {
   public float getAnimationProgress();
   public void setAnimationProgress(float);
 }
 
--keep class com.android.launcher3.Workspace {
+-keep class io.github.runassudo.flauncher.Workspace {
   public float getBackgroundAlpha();
   public void setBackgroundAlpha(float);
 }

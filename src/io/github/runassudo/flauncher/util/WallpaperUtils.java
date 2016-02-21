@@ -24,7 +24,7 @@ import android.graphics.Point;
 import android.os.Build;
 import android.view.WindowManager;
 
-import com.android.launcher3.Utilities;
+import io.github.runassudo.flauncher.Utilities;
 
 /**
  * Utility methods for wallpaper management.

@@ -52,7 +52,7 @@ import io.github.runassudo.flauncher.backup.BackupProtos.Screen;
 import io.github.runassudo.flauncher.backup.BackupProtos.Widget;
 import io.github.runassudo.flauncher.compat.UserHandleCompat;
 import io.github.runassudo.flauncher.compat.UserManagerCompat;
-import com.android.launcher3.model.MigrateFromRestoreTask;
+import io.github.runassudo.flauncher.model.MigrateFromRestoreTask;
 import io.github.runassudo.flauncher.util.Thunk;
 import com.google.protobuf.nano.InvalidProtocolBufferNanoException;
 import com.google.protobuf.nano.MessageNano;

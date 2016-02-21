@@ -25,7 +25,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
-import com.android.launcher3.ExtendedEditText;
+import io.github.runassudo.flauncher.ExtendedEditText;
 import io.github.runassudo.flauncher.R;
 import io.github.runassudo.flauncher.Utilities;
 import io.github.runassudo.flauncher.util.Thunk;

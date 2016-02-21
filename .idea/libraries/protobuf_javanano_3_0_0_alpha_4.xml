@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="protobuf-javanano-3.0.0-alpha-4">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libs/protobuf-javanano-3.0.0-alpha-4.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
