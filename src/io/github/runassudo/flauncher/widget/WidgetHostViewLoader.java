@@ -15,6 +15,7 @@ import io.github.runassudo.flauncher.DragLayer;
 import io.github.runassudo.flauncher.DragSource;
 import io.github.runassudo.flauncher.Launcher;
 import io.github.runassudo.flauncher.LauncherAppWidgetProviderInfo;
+import io.github.runassudo.flauncher.Utilities;
 import io.github.runassudo.flauncher.compat.AppWidgetManagerCompat;
 import io.github.runassudo.flauncher.util.Thunk;
 
@@ -131,7 +132,7 @@ public class WidgetHostViewLoader implements DragListener {
     public static Bundle getDefaultOptionsForWidget(Launcher launcher, PendingAddWidgetInfo info) {
         Bundle options = null;
         Rect rect = new Rect();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+        if (Utilities.ATLEAST_JB_MR1) {
             AppWidgetResizeFrame.getWidgetSizeRanges(launcher, info.spanX, info.spanY, rect);
             Rect padding = AppWidgetHostView.getDefaultPaddingForWidget(launcher,
                     info.componentName, null);

@@ -17,14 +17,16 @@
 package io.github.runassudo.flauncher;
 
 import android.app.SearchManager;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.UserManager;
 import android.util.Log;
+
 import io.github.runassudo.flauncher.accessibility.LauncherAccessibilityDelegate;
 import io.github.runassudo.flauncher.compat.LauncherAppsCompat;
 import io.github.runassudo.flauncher.compat.PackageInstallerCompat;
+import io.github.runassudo.flauncher.compat.UserManagerCompat;
 import io.github.runassudo.flauncher.util.Thunk;
 
 import java.lang.ref.WeakReference;
@@ -95,12 +97,12 @@ public class LauncherAppState {
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_LOCALE_CHANGED);
         filter.addAction(SearchManager.INTENT_GLOBAL_SEARCH_ACTIVITY_CHANGED);
-        filter.addAction(SearchManager.INTENT_ACTION_SEARCHABLES_CHANGED);
         // For handling managed profiles
         filter.addAction(LauncherAppsCompat.ACTION_MANAGED_PROFILE_ADDED);
         filter.addAction(LauncherAppsCompat.ACTION_MANAGED_PROFILE_REMOVED);
 
         sContext.registerReceiver(mModel, filter);
+        UserManagerCompat.getInstance(sContext).enableAndResetCache();
     }
 
     /**
@@ -125,7 +127,7 @@ public class LauncherAppState {
     LauncherModel setLauncher(Launcher launcher) {
         getLauncherProvider().setLauncherProviderChangeListener(launcher);
         mModel.initialize(launcher);
-        mAccessibilityDelegate = ((launcher != null) && Utilities.isLmpOrAbove()) ?
+        mAccessibilityDelegate = ((launcher != null) && Utilities.ATLEAST_LOLLIPOP) ?
             new LauncherAccessibilityDelegate(launcher) : null;
         return mModel;
     }
@@ -146,7 +148,7 @@ public class LauncherAppState {
         sLauncherProvider = new WeakReference<LauncherProvider>(provider);
     }
 
-    static LauncherProvider getLauncherProvider() {
+    public static LauncherProvider getLauncherProvider() {
         return sLauncherProvider.get();
     }
 
