@@ -8,7 +8,8 @@ A fork of the Android open-source AOSP 'Launcher3' launcher. A continuation of m
 * Icon pack support
 
 ## Licence
-Copyright © 2015  RunasSudo (Yingtong Li)
+Copyright © 2015–2016  RunasSudo (Yingtong Li)
+Based on code by the Android Open Source Project, licensed under the Apache Licence version 2.0.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
