@@ -4,11 +4,13 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import io.github.runassudo.flauncher.LauncherAppWidgetProviderInfo;
-import io.github.runassudo.flauncher.Utilities;
-import io.github.runassudo.flauncher.compat.AppWidgetManagerCompat;
-import io.github.runassudo.flauncher.compat.UserHandleCompat;
-import io.github.runassudo.flauncher.util.ComponentKey;
+import android.util.Log;
+
+import com.android.launcher3.LauncherAppWidgetProviderInfo;
+import com.android.launcher3.Utilities;
+import com.android.launcher3.compat.AppWidgetManagerCompat;
+import com.android.launcher3.compat.UserHandleCompat;
+import com.android.launcher3.util.ComponentKey;
 
 import java.text.Collator;
 import java.util.Comparator;
@@ -91,7 +93,13 @@ public class WidgetsAndShortcutNameComparator implements Comparator<Object> {
             return Utilities.trim(mManager.loadLabel(widgetInfo));
         } else {
             ResolveInfo shortcutInfo = (ResolveInfo) o;
-            return Utilities.trim(shortcutInfo.loadLabel(mPackageManager));
+            try {
+                return Utilities.trim(shortcutInfo.loadLabel(mPackageManager));
+            } catch (Exception e) {
+                Log.e("ShortcutNameComparator",
+                        "Failed to extract app display name from resolve info", e);
+                return "";
+            }
         }
     }
 };

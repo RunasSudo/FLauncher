@@ -25,7 +25,7 @@ import android.util.Log;
 
 import io.github.runassudo.flauncher.AutoInstallsLayout.LayoutParserCallback;
 import io.github.runassudo.flauncher.LauncherSettings.Favorites;
-import io.github.runassudo.flauncher.backup.BackupProtos.Favorite;
+import io.github.runassudo.flauncher.backup.nano.BackupProtos.Favorite;
 import io.github.runassudo.flauncher.util.Thunk;
 
 import org.xmlpull.v1.XmlPullParserException;
@@ -93,7 +93,7 @@ public class CommonAppTypeParser implements LayoutParserCallback {
 
         public MyLayoutParser() {
             super(CommonAppTypeParser.this.mContext, null, CommonAppTypeParser.this,
-                    CommonAppTypeParser.this.mContext.getResources(), mResId, TAG_RESOLVE, 0);
+                    CommonAppTypeParser.this.mContext.getResources(), mResId, TAG_RESOLVE);
         }
 
         @Override

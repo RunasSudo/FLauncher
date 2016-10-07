@@ -13,7 +13,6 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import io.github.runassudo.flauncher.LauncherSettings.Favorites;
-import io.github.runassudo.flauncher.compat.AppWidgetManagerCompat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -90,7 +89,7 @@ public class AppWidgetsRestoredReceiver extends BroadcastReceiver {
                     }
                     return null;
                 }
-            }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, (Void) null);
+            }.executeOnExecutor(Utilities.THREAD_POOL_EXECUTOR);
         }
 
         LauncherAppState app = LauncherAppState.getInstanceNoCreate();

@@ -18,8 +18,7 @@ syntax = "proto2";
 
 package launcher_backup;
 
-option javanano_use_deprecated_package = true;
-option java_package = "io.github.runassudo.flauncher.backup";
+option java_package = "io.github.runassudo.flauncher.backup.nano";
 option java_outer_classname = "BackupProtos";
 
 message Key {

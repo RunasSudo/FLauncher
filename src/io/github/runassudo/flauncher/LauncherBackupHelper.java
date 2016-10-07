@@ -41,19 +41,20 @@ import android.util.Log;
 
 import io.github.runassudo.flauncher.LauncherSettings.Favorites;
 import io.github.runassudo.flauncher.LauncherSettings.WorkspaceScreens;
-import io.github.runassudo.flauncher.backup.BackupProtos;
-import io.github.runassudo.flauncher.backup.BackupProtos.CheckedMessage;
-import io.github.runassudo.flauncher.backup.BackupProtos.DeviceProfieData;
-import io.github.runassudo.flauncher.backup.BackupProtos.Favorite;
-import io.github.runassudo.flauncher.backup.BackupProtos.Journal;
-import io.github.runassudo.flauncher.backup.BackupProtos.Key;
-import io.github.runassudo.flauncher.backup.BackupProtos.Resource;
-import io.github.runassudo.flauncher.backup.BackupProtos.Screen;
-import io.github.runassudo.flauncher.backup.BackupProtos.Widget;
-import io.github.runassudo.flauncher.compat.UserHandleCompat;
-import io.github.runassudo.flauncher.compat.UserManagerCompat;
-import io.github.runassudo.flauncher.model.MigrateFromRestoreTask;
-import io.github.runassudo.flauncher.util.Thunk;
+import com.android.launcher3.backup.nano.BackupProtos;
+import com.android.launcher3.backup.nano.BackupProtos.CheckedMessage;
+import com.android.launcher3.backup.nano.BackupProtos.DeviceProfieData;
+import com.android.launcher3.backup.nano.BackupProtos.Favorite;
+import com.android.launcher3.backup.nano.BackupProtos.Journal;
+import com.android.launcher3.backup.nano.BackupProtos.Key;
+import com.android.launcher3.backup.nano.BackupProtos.Resource;
+import com.android.launcher3.backup.nano.BackupProtos.Screen;
+import com.android.launcher3.backup.nano.BackupProtos.Widget;
+import com.android.launcher3.compat.AppWidgetManagerCompat;
+import com.android.launcher3.compat.UserHandleCompat;
+import com.android.launcher3.compat.UserManagerCompat;
+import com.android.launcher3.model.GridSizeMigrationTask;
+import com.android.launcher3.util.Thunk;
 import com.google.protobuf.nano.InvalidProtocolBufferNanoException;
 import com.google.protobuf.nano.MessageNano;
 
@@ -315,14 +316,13 @@ public class LauncherBackupHelper implements BackupHelper {
             return true;
         }
 
-        if (MigrateFromRestoreTask.ENABLED &&
-                (oldProfile.desktopCols - currentProfile.desktopCols <= 1) &&
-                (oldProfile.desktopRows - currentProfile.desktopRows <= 1)) {
-            // Allow desktop migration when row and/or column count contracts by 1.
-
+        if (GridSizeMigrationTask.ENABLED) {
+            // One time migrate the workspace when launcher starts.
             migrationCompatibleProfileData = initDeviceProfileData(mIdp);
             migrationCompatibleProfileData.desktopCols = oldProfile.desktopCols;
             migrationCompatibleProfileData.desktopRows = oldProfile.desktopRows;
+            migrationCompatibleProfileData.hotseatCount = oldProfile.hotseatCount;
+            migrationCompatibleProfileData.allappsRank = oldProfile.allappsRank;
             return true;
         }
         return false;
@@ -661,12 +661,14 @@ public class LauncherBackupHelper implements BackupHelper {
                 + getUserSelectionArg();
         Cursor cursor = cr.query(Favorites.CONTENT_URI, FAVORITE_PROJECTION,
                 where, null, null);
+        AppWidgetManagerCompat widgetManager = AppWidgetManagerCompat.getInstance(mContext);
         try {
             cursor.moveToPosition(-1);
             while(cursor.moveToNext()) {
                 final long id = cursor.getLong(ID_INDEX);
                 final String providerName = cursor.getString(APPWIDGET_PROVIDER_INDEX);
                 final ComponentName provider = ComponentName.unflattenFromString(providerName);
+
                 Key key = null;
                 String backupKey = null;
                 if (provider != null) {
@@ -685,11 +687,14 @@ public class LauncherBackupHelper implements BackupHelper {
                 } else if (backupKey != null) {
                     if (DEBUG) Log.d(TAG, "I can count this high: " + backupWidgetCount);
                     if (backupWidgetCount < MAX_WIDGETS_PER_PASS) {
-                        if (DEBUG) Log.d(TAG, "saving widget " + backupKey);
-                        UserHandleCompat user = UserHandleCompat.myUserHandle();
-                        writeRowToBackup(key, packWidget(dpi, provider, user), data);
-                        mKeys.add(key);
-                        backupWidgetCount ++;
+                        LauncherAppWidgetProviderInfo widgetInfo = widgetManager
+                                .getLauncherAppWidgetInfo(cursor.getInt(APPWIDGET_ID_INDEX));
+                        if (widgetInfo != null) {
+                            if (DEBUG) Log.d(TAG, "saving widget " + backupKey);
+                            writeRowToBackup(key, packWidget(dpi, widgetInfo), data);
+                            mKeys.add(key);
+                            backupWidgetCount ++;
+                        }
                     } else {
                         if (VERBOSE) Log.v(TAG, "deferring widget backup " + backupKey);
                         // too many widgets for this pass, request another.
@@ -768,13 +773,10 @@ public class LauncherBackupHelper implements BackupHelper {
         try {
             Key key = Key.parseFrom(Base64.decode(backupKey, Base64.DEFAULT));
             if (key.checksum != checkKey(key)) {
-                key = null;
                 throw new InvalidBackupException("invalid key read from stream" + backupKey);
             }
             return key;
-        } catch (InvalidProtocolBufferNanoException e) {
-            throw new InvalidBackupException(e);
-        } catch (IllegalArgumentException e) {
+        } catch (InvalidProtocolBufferNanoException | IllegalArgumentException e) {
             throw new InvalidBackupException(e);
         }
     }
@@ -1008,16 +1010,14 @@ public class LauncherBackupHelper implements BackupHelper {
     }
 
     /** Serialize a widget for persistence, including a checksum wrapper. */
-    private Widget packWidget(int dpi, ComponentName provider, UserHandleCompat user) {
-        final LauncherAppWidgetProviderInfo info =
-                LauncherModel.getProviderInfo(mContext, provider, user);
+    private Widget packWidget(int dpi, LauncherAppWidgetProviderInfo info) {
         Widget widget = new Widget();
-        widget.provider = provider.flattenToShortString();
+        widget.provider = info.provider.flattenToShortString();
         widget.label = info.label;
         widget.configure = info.configure != null;
         if (info.icon != 0) {
             widget.icon = new Resource();
-            Drawable fullResIcon = mIconCache.getFullResIcon(provider.getPackageName(), info.icon);
+            Drawable fullResIcon = mIconCache.getFullResIcon(info.provider.getPackageName(), info.icon);
             Bitmap icon = Utilities.createIconBitmap(fullResIcon, mContext);
             widget.icon.data = Utilities.flattenBitmap(icon);
             widget.icon.dpi = dpi;
@@ -1026,7 +1026,6 @@ public class LauncherBackupHelper implements BackupHelper {
         Point spans = info.getMinSpans(mIdp, mContext);
         widget.minSpanX = spans.x;
         widget.minSpanY = spans.y;
-
         return widget;
     }
 
@@ -1103,12 +1102,6 @@ public class LauncherBackupHelper implements BackupHelper {
             }
         } catch (IOException e) {
             Log.w(TAG, "failed to close the journal", e);
-        } finally {
-            try {
-                inStream.close();
-            } catch (IOException e) {
-                Log.w(TAG, "failed to close the journal", e);
-            }
         }
         return journal;
     }
@@ -1137,12 +1130,10 @@ public class LauncherBackupHelper implements BackupHelper {
      * @param journal a Journal protocol buffer
      */
     private void writeJournal(ParcelFileDescriptor newState, Journal journal) {
-        FileOutputStream outStream = null;
         try {
-            outStream = new FileOutputStream(newState.getFileDescriptor());
+            FileOutputStream outStream = new FileOutputStream(newState.getFileDescriptor());
             final byte[] journalBytes = writeCheckedBytes(journal);
             outStream.write(journalBytes);
-            outStream.close();
             if (VERBOSE) Log.v(TAG, "wrote " + journalBytes.length + " bytes of journal");
         } catch (IOException e) {
             Log.w(TAG, "failed to write backup journal", e);
