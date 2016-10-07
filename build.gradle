@@ -3,8 +3,8 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.0'
-        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.7.4'
+        classpath 'com.android.tools.build:gradle:2.2.0'
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.0'
     }
 }
 
@@ -12,18 +12,15 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.google.protobuf'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    compileSdkVersion 24
+    buildToolsVersion "24.0.3"
 
     defaultConfig {
         applicationId "io.github.runassudo.flauncher"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 4
-        versionName "0.1.3"
-
-        testApplicationId "io.github.runassudo.flauncher.tests"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        versionCode 5
+        versionName "0.1.4"
     }
     buildTypes {
         debug {
@@ -36,12 +33,6 @@ android {
             java.srcDirs = ['src', 'WallpaperPicker/src']
             manifest.srcFile 'AndroidManifest.xml'
             proto.srcDirs 'protos/'
-        }
-
-        androidTest {
-            java.srcDirs = ['tests/src']
-            res.srcDirs = ['tests/res']
-            manifest.srcFile "tests/AndroidManifest.xml"
         }
     }
     
@@ -58,15 +49,23 @@ dependencies {
     compile 'com.android.support:support-v4:23.1.1'
     compile 'com.android.support:recyclerview-v7:23.1.1'
     compile 'com.google.protobuf.nano:protobuf-javanano:3.0.0-alpha-5'
-
-    testCompile 'junit:junit:4.12'
-    androidTestCompile 'com.android.support.test:runner:0.5'
-    androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.2'
 }
 
 protobuf {
     // Configure the protoc executable
     protoc {
-        artifact = 'com.google.protobuf:protoc:3.0.0-beta-2'
+        artifact = 'com.google.protobuf:protoc:3.1.0'
+    }
+    plugins {
+        javanano {
+            artifact = 'com.google.protobuf:protoc:3.1.0'
+        }
+    }
+    generateProtoTasks {
+        all().each { task ->
+            task.plugins {
+                javanano { }
+            }
+        }
     }
 }

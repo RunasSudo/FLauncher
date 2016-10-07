@@ -14,15 +14,8 @@
      limitations under the License.
 -->
 
-<<<<<<< HEAD:res/layout/launcher_overlay.xml
-<io.github.runassudo.flauncher.InsettableFrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" />
-=======
 <resources>
 <!-- Container -->
     <dimen name="container_max_width">736dp</dimen>
 
 </resources>
->>>>>>> aosp:res/values-sw768dp-port/dimens.xml
