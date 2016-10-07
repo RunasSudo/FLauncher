@@ -25,11 +25,11 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import io.github.runassudo.flauncher.BaseRecyclerView;
-import com.android.launcher3.BubbleTextView;
-import com.android.launcher3.DeviceProfile;
-import com.android.launcher3.R;
-import com.android.launcher3.Stats;
-import com.android.launcher3.Utilities;
+import io.github.runassudo.flauncher.BubbleTextView;
+import io.github.runassudo.flauncher.DeviceProfile;
+import io.github.runassudo.flauncher.R;
+import io.github.runassudo.flauncher.Stats;
+import io.github.runassudo.flauncher.Utilities;
 
 import java.util.List;
 

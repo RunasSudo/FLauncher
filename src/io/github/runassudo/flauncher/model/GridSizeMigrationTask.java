@@ -1,4 +1,4 @@
-package com.android.launcher3.model;
+package io.github.runassudo.flauncher.model;
 
 import android.content.ComponentName;
 import android.content.ContentProviderOperation;
@@ -13,19 +13,19 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.android.launcher3.InvariantDeviceProfile;
-import com.android.launcher3.ItemInfo;
-import com.android.launcher3.LauncherAppState;
-import com.android.launcher3.LauncherAppWidgetProviderInfo;
-import com.android.launcher3.LauncherModel;
-import com.android.launcher3.LauncherProvider;
-import com.android.launcher3.LauncherSettings;
-import com.android.launcher3.LauncherSettings.Favorites;
-import com.android.launcher3.Utilities;
-import com.android.launcher3.backup.nano.BackupProtos;
-import com.android.launcher3.compat.AppWidgetManagerCompat;
-import com.android.launcher3.compat.PackageInstallerCompat;
-import com.android.launcher3.util.LongArrayMap;
+import io.github.runassudo.flauncher.InvariantDeviceProfile;
+import io.github.runassudo.flauncher.ItemInfo;
+import io.github.runassudo.flauncher.LauncherAppState;
+import io.github.runassudo.flauncher.LauncherAppWidgetProviderInfo;
+import io.github.runassudo.flauncher.LauncherModel;
+import io.github.runassudo.flauncher.LauncherProvider;
+import io.github.runassudo.flauncher.LauncherSettings;
+import io.github.runassudo.flauncher.LauncherSettings.Favorites;
+import io.github.runassudo.flauncher.Utilities;
+import io.github.runassudo.flauncher.backup.nano.BackupProtos;
+import io.github.runassudo.flauncher.compat.AppWidgetManagerCompat;
+import io.github.runassudo.flauncher.compat.PackageInstallerCompat;
+import io.github.runassudo.flauncher.util.LongArrayMap;
 
 import java.util.ArrayList;
 import java.util.Collections;

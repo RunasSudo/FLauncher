@@ -35,7 +35,7 @@
         android:visibility="invisible" />
 
 
-    <com.android.launcher3.allapps.AllAppsRecyclerViewContainerView
+    <io.github.runassudo.flauncher.allapps.AllAppsRecyclerViewContainerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/main_content"
@@ -47,7 +47,7 @@
         android:elevation="15dp" >
 
         <!-- DO NOT CHANGE THE ID -->
-        <com.android.launcher3.allapps.AllAppsRecyclerView
+        <io.github.runassudo.flauncher.allapps.AllAppsRecyclerView
             android:id="@+id/apps_list_view"
             android:theme="@style/Theme.Light.CustomOverscroll"
             android:layout_width="match_parent"
@@ -67,7 +67,7 @@
             android:orientation="horizontal"
             android:background="@drawable/all_apps_search_bg" >
 
-            <com.android.launcher3.ExtendedEditText
+            <io.github.runassudo.flauncher.ExtendedEditText
                 android:id="@+id/search_box_input"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -87,5 +87,5 @@
                 android:textSize="16sp" />
         </LinearLayout>
 
-    </com.android.launcher3.allapps.AllAppsRecyclerViewContainerView>
+    </io.github.runassudo.flauncher.allapps.AllAppsRecyclerViewContainerView>
 </io.github.runassudo.flauncher.allapps.AllAppsContainerView>

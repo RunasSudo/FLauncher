@@ -19,7 +19,7 @@ package io.github.runassudo.flauncher;
 import android.graphics.PointF;
 import android.graphics.Rect;
 
-import com.android.launcher3.accessibility.DragViewStateAnnouncer;
+import io.github.runassudo.flauncher.accessibility.DragViewStateAnnouncer;
 
 /**
  * Interface defining an object that can receive a drag.

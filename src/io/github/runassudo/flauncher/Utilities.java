@@ -61,9 +61,9 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.Toast;
 
-import com.android.launcher3.compat.UserHandleCompat;
-import com.android.launcher3.config.FeatureFlags;
-import com.android.launcher3.util.IconNormalizer;
+import io.github.runassudo.flauncher.compat.UserHandleCompat;
+import io.github.runassudo.flauncher.config.FeatureFlags;
+import io.github.runassudo.flauncher.util.IconNormalizer;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

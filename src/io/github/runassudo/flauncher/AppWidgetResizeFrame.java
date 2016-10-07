@@ -16,8 +16,8 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import com.android.launcher3.accessibility.DragViewStateAnnouncer;
-import com.android.launcher3.util.FocusLogic;
+import io.github.runassudo.flauncher.accessibility.DragViewStateAnnouncer;
+import io.github.runassudo.flauncher.util.FocusLogic;
 
 public class AppWidgetResizeFrame extends FrameLayout implements View.OnKeyListener {
     private static final int SNAP_DURATION = 150;

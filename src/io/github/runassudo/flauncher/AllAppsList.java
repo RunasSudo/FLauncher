@@ -22,8 +22,8 @@ import android.content.Context;
 import io.github.runassudo.flauncher.compat.LauncherActivityInfoCompat;
 import io.github.runassudo.flauncher.compat.LauncherAppsCompat;
 import io.github.runassudo.flauncher.compat.UserHandleCompat;
-import com.android.launcher3.util.FlagOp;
-import com.android.launcher3.util.StringFilter;
+import io.github.runassudo.flauncher.util.FlagOp;
+import io.github.runassudo.flauncher.util.StringFilter;
 
 import java.util.ArrayList;
 import java.util.HashSet;

@@ -1,4 +1,4 @@
-package com.android.launcher3.util;
+package io.github.runassudo.flauncher.util;
 
 import android.content.ContentValues;
 import android.content.Context;

@@ -169,7 +169,7 @@
         <!-- ENABLE_FOR_TESTING
 
         <activity
-            android:name="com.android.launcher3.testing.LauncherExtension"
+            android:name="io.github.runassudo.flauncher.testing.LauncherExtension"
             android:launchMode="singleTask"
             android:clearTaskOnLaunch="true"
             android:stateNotNeeded="true"
@@ -186,7 +186,7 @@
         </activity>
 
         <activity
-            android:name="com.android.launcher3.testing.MemoryDumpActivity"
+            android:name="io.github.runassudo.flauncher.testing.MemoryDumpActivity"
             android:theme="@android:style/Theme.NoDisplay"
             android:label="* HPROF"
             android:excludeFromRecents="true"
@@ -200,7 +200,7 @@
         </activity>
 
         <activity
-            android:name="com.android.launcher3.testing.ToggleWeightWatcher"
+            android:name="io.github.runassudo.flauncher.testing.ToggleWeightWatcher"
             android:label="Show Mem"
             android:icon="@mipmap/ic_launcher_home">
             <intent-filter>
@@ -210,7 +210,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name="com.android.launcher3.testing.MemoryTracker" />
+        <service android:name="io.github.runassudo.flauncher.testing.MemoryTracker" />
 
         -->
 

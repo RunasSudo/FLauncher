@@ -26,10 +26,10 @@ import io.github.runassudo.flauncher.accessibility.LauncherAccessibilityDelegate
 import io.github.runassudo.flauncher.compat.LauncherAppsCompat;
 import io.github.runassudo.flauncher.compat.PackageInstallerCompat;
 import io.github.runassudo.flauncher.compat.UserManagerCompat;
-import com.android.launcher3.config.FeatureFlags;
-import com.android.launcher3.util.ConfigMonitor;
-import com.android.launcher3.util.TestingUtils;
-import com.android.launcher3.util.Thunk;
+import io.github.runassudo.flauncher.config.FeatureFlags;
+import io.github.runassudo.flauncher.util.ConfigMonitor;
+import io.github.runassudo.flauncher.util.TestingUtils;
+import io.github.runassudo.flauncher.util.Thunk;
 
 import java.lang.ref.WeakReference;
 

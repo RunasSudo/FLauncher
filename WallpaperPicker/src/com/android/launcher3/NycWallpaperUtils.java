@@ -1,4 +1,4 @@
-package com.android.launcher3;
+package io.github.runassudo.flauncher;
 
 import android.app.AlertDialog;
 import android.app.WallpaperManager;

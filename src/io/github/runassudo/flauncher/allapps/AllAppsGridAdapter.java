@@ -44,9 +44,9 @@ import android.widget.TextView;
 import io.github.runassudo.flauncher.AppInfo;
 import io.github.runassudo.flauncher.BubbleTextView;
 import io.github.runassudo.flauncher.Launcher;
-import com.android.launcher3.LauncherAppState;
-import com.android.launcher3.R;
-import com.android.launcher3.Utilities;
+import io.github.runassudo.flauncher.LauncherAppState;
+import io.github.runassudo.flauncher.R;
+import io.github.runassudo.flauncher.Utilities;
 
 import java.util.HashMap;
 import java.util.List;

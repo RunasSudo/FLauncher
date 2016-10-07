@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.android.launcher3.util;
+package io.github.runassudo.flauncher.util;
 
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 
-import com.android.launcher3.Utilities;
+import io.github.runassudo.flauncher.Utilities;
 
 /**
  * Utility methods using package manager

@@ -45,10 +45,10 @@ import io.github.runassudo.flauncher.compat.LauncherActivityInfoCompat;
 import io.github.runassudo.flauncher.compat.LauncherAppsCompat;
 import io.github.runassudo.flauncher.compat.UserHandleCompat;
 import io.github.runassudo.flauncher.compat.UserManagerCompat;
-import com.android.launcher3.config.FeatureFlags;
+import io.github.runassudo.flauncher.config.FeatureFlags;
 import io.github.runassudo.flauncher.model.PackageItemInfo;
 import io.github.runassudo.flauncher.util.ComponentKey;
-import com.android.launcher3.util.SQLiteCacheHelper;
+import io.github.runassudo.flauncher.util.SQLiteCacheHelper;
 import io.github.runassudo.flauncher.util.Thunk;
 
 import java.util.Collections;

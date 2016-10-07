@@ -42,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.android.launcher3.widget.WidgetsRecyclerView
+        <io.github.runassudo.flauncher.widget.WidgetsRecyclerView
             android:id="@+id/widgets_list_view"
             android:theme="@style/Theme.Dark.CustomOverscroll"
             android:layout_width="match_parent"

@@ -1,9 +1,9 @@
-package com.android.launcher3.testing;
+package io.github.runassudo.flauncher.testing;
 
 import android.appwidget.AppWidgetProviderInfo;
 
-import com.android.launcher3.CustomAppWidget;
-import com.android.launcher3.R;
+import io.github.runassudo.flauncher.CustomAppWidget;
+import io.github.runassudo.flauncher.R;
 
 public class DummyWidget implements CustomAppWidget {
     @Override

@@ -28,10 +28,10 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
-import com.android.launcher3.ExtendedEditText;
-import com.android.launcher3.Launcher;
-import com.android.launcher3.Utilities;
-import com.android.launcher3.util.ComponentKey;
+import io.github.runassudo.flauncher.ExtendedEditText;
+import io.github.runassudo.flauncher.Launcher;
+import io.github.runassudo.flauncher.Utilities;
+import io.github.runassudo.flauncher.util.ComponentKey;
 
 import java.util.ArrayList;
 

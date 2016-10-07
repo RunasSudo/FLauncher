@@ -26,7 +26,7 @@ import io.github.runassudo.flauncher.compat.LauncherActivityInfoCompat;
 import io.github.runassudo.flauncher.compat.UserHandleCompat;
 import io.github.runassudo.flauncher.compat.UserManagerCompat;
 import io.github.runassudo.flauncher.util.ComponentKey;
-import com.android.launcher3.util.PackageManagerHelper;
+import io.github.runassudo.flauncher.util.PackageManagerHelper;
 
 import java.util.ArrayList;
 import java.util.Arrays;

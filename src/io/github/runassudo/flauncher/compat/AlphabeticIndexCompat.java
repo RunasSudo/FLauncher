@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.util.Log;
 
-import com.android.launcher3.Utilities;
+import io.github.runassudo.flauncher.Utilities;
 
 import java.lang.reflect.Method;
 import java.util.Locale;

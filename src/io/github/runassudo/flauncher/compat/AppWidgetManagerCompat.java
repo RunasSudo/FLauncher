@@ -29,7 +29,7 @@ import android.os.Bundle;
 import io.github.runassudo.flauncher.IconCache;
 import io.github.runassudo.flauncher.LauncherAppWidgetProviderInfo;
 import io.github.runassudo.flauncher.Utilities;
-import com.android.launcher3.util.ComponentKey;
+import io.github.runassudo.flauncher.util.ComponentKey;
 
 import java.util.HashMap;
 import java.util.List;

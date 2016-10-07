@@ -35,7 +35,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListAdapter;
 
-import com.android.launcher3.WallpaperCropActivity.CropViewScaleAndOffsetProvider;
+import io.github.runassudo.flauncher.WallpaperCropActivity.CropViewScaleAndOffsetProvider;
 import com.android.photos.views.TiledImageRenderer.TileSource;
 
 import java.io.ByteArrayInputStream;

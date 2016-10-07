@@ -25,7 +25,7 @@ import android.database.Cursor;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
 
-import com.android.launcher3.model.GridSizeMigrationTask;
+import io.github.runassudo.flauncher.model.GridSizeMigrationTask;
 
 import java.io.IOException;
 

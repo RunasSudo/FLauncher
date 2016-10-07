@@ -20,7 +20,7 @@ import io.github.runassudo.flauncher.Utilities;
 import io.github.runassudo.flauncher.compat.AlphabeticIndexCompat;
 import io.github.runassudo.flauncher.compat.AppWidgetManagerCompat;
 import io.github.runassudo.flauncher.compat.UserHandleCompat;
-import com.android.launcher3.config.ProviderConfig;
+import io.github.runassudo.flauncher.config.ProviderConfig;
 
 import java.util.ArrayList;
 import java.util.Collections;

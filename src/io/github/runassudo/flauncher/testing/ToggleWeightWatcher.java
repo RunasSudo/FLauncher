@@ -1,14 +1,14 @@
-package com.android.launcher3.testing;
+package io.github.runassudo.flauncher.testing;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
-import com.android.launcher3.Launcher;
-import com.android.launcher3.LauncherAppState;
-import com.android.launcher3.Utilities;
-import com.android.launcher3.util.TestingUtils;
+import io.github.runassudo.flauncher.Launcher;
+import io.github.runassudo.flauncher.LauncherAppState;
+import io.github.runassudo.flauncher.Utilities;
+import io.github.runassudo.flauncher.util.TestingUtils;
 
 public class ToggleWeightWatcher extends Activity {
 

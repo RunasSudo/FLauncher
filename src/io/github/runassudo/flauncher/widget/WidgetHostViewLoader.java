@@ -10,7 +10,7 @@ import android.util.Log;
 import android.view.View;
 
 import io.github.runassudo.flauncher.AppWidgetResizeFrame;
-import com.android.launcher3.DragController;
+import io.github.runassudo.flauncher.DragController;
 import io.github.runassudo.flauncher.DragLayer;
 import io.github.runassudo.flauncher.DragSource;
 import io.github.runassudo.flauncher.Launcher;

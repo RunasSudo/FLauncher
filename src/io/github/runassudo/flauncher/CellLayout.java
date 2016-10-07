@@ -52,7 +52,7 @@ import io.github.runassudo.flauncher.FolderIcon.FolderRingAnimator;
 import io.github.runassudo.flauncher.accessibility.DragAndDropAccessibilityDelegate;
 import io.github.runassudo.flauncher.accessibility.FolderAccessibilityHelper;
 import io.github.runassudo.flauncher.accessibility.WorkspaceAccessibilityHelper;
-import com.android.launcher3.util.ParcelableSparseArray;
+import io.github.runassudo.flauncher.util.ParcelableSparseArray;
 import io.github.runassudo.flauncher.util.Thunk;
 
 import java.util.ArrayList;

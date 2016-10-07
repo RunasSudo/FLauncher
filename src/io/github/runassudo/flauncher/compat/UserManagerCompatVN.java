@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.launcher3.compat;
+package io.github.runassudo.flauncher.compat;
 
 import android.annotation.TargetApi;
 import android.content.Context;

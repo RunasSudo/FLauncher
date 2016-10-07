@@ -35,7 +35,7 @@ import android.view.ViewConfiguration;
 import android.view.accessibility.AccessibilityManager;
 import android.view.inputmethod.InputMethodManager;
 
-import com.android.launcher3.accessibility.DragViewStateAnnouncer;
+import io.github.runassudo.flauncher.accessibility.DragViewStateAnnouncer;
 import io.github.runassudo.flauncher.util.Thunk;
 
 import java.util.ArrayList;

@@ -41,7 +41,7 @@ import android.widget.Toast;
 import io.github.runassudo.flauncher.IconCache;
 import io.github.runassudo.flauncher.LauncherAppWidgetProviderInfo;
 import io.github.runassudo.flauncher.R;
-import com.android.launcher3.util.ComponentKey;
+import io.github.runassudo.flauncher.util.ComponentKey;
 
 import java.util.ArrayList;
 import java.util.HashMap;

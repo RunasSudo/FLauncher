@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.launcher3.accessibility;
+package io.github.runassudo.flauncher.accessibility;
 
 import android.content.Context;
 import android.view.View;

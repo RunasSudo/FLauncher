@@ -1,4 +1,4 @@
-package com.android.launcher3.util;
+package io.github.runassudo.flauncher.util;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -9,24 +9,24 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.android.launcher3.CustomAppWidget;
-import com.android.launcher3.Launcher;
-import com.android.launcher3.LauncherAppState;
-import com.android.launcher3.R;
-import com.android.launcher3.Utilities;
+import io.github.runassudo.flauncher.CustomAppWidget;
+import io.github.runassudo.flauncher.Launcher;
+import io.github.runassudo.flauncher.LauncherAppState;
+import io.github.runassudo.flauncher.R;
+import io.github.runassudo.flauncher.Utilities;
 
 import java.util.HashMap;
 
 public class TestingUtils {
 
-    public static final String MEMORY_TRACKER = "com.android.launcher3.testing.MemoryTracker";
-    public static final String ACTION_START_TRACKING = "com.android.launcher3.action.START_TRACKING";
+    public static final String MEMORY_TRACKER = "io.github.runassudo.flauncher.testing.MemoryTracker";
+    public static final String ACTION_START_TRACKING = "io.github.runassudo.flauncher.action.START_TRACKING";
 
     public static final boolean MEMORY_DUMP_ENABLED = false;
     public static final String SHOW_WEIGHT_WATCHER = "debug.show_mem";
 
     public static final boolean ENABLE_CUSTOM_WIDGET_TEST = false;
-    public static final String DUMMY_WIDGET = "com.android.launcher3.testing.DummyWidget";
+    public static final String DUMMY_WIDGET = "io.github.runassudo.flauncher.testing.DummyWidget";
 
     public static void startTrackingMemory(Context context) {
         if (MEMORY_DUMP_ENABLED) {

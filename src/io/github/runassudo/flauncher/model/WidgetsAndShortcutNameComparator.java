@@ -6,11 +6,11 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.util.Log;
 
-import com.android.launcher3.LauncherAppWidgetProviderInfo;
-import com.android.launcher3.Utilities;
-import com.android.launcher3.compat.AppWidgetManagerCompat;
-import com.android.launcher3.compat.UserHandleCompat;
-import com.android.launcher3.util.ComponentKey;
+import io.github.runassudo.flauncher.LauncherAppWidgetProviderInfo;
+import io.github.runassudo.flauncher.Utilities;
+import io.github.runassudo.flauncher.compat.AppWidgetManagerCompat;
+import io.github.runassudo.flauncher.compat.UserHandleCompat;
+import io.github.runassudo.flauncher.util.ComponentKey;
 
 import java.text.Collator;
 import java.util.Comparator;

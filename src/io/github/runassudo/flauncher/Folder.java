@@ -57,7 +57,7 @@ import io.github.runassudo.flauncher.FolderInfo.FolderListener;
 import io.github.runassudo.flauncher.UninstallDropTarget.UninstallSource;
 import io.github.runassudo.flauncher.Workspace.ItemOperator;
 import io.github.runassudo.flauncher.accessibility.LauncherAccessibilityDelegate.AccessibilityDragSource;
-import com.android.launcher3.config.FeatureFlags;
+import io.github.runassudo.flauncher.config.FeatureFlags;
 import io.github.runassudo.flauncher.util.Thunk;
 import io.github.runassudo.flauncher.util.UiThreadCircularReveal;
 
